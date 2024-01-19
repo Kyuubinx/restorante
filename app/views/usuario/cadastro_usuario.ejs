@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastre-se</title>
+</head>
+<body>
+    <% include ("../../public/menu.html") %>
+    <h1>Cadastro do usuario</h1>
+    <% if (erros) { %>
+        <ul>
+            <% for (let i=0; i < erros.length;i++){ %>
+                <li>
+                    <%= erros[i].msg %>
+                </li>
+                <% } %>
+        </ul>
+        <% } %>
+            <form action="/usuario/cadastrar" method="post">
+                <div>
+                    <label>email</label>
+                    <input type="text" name="email" id="email" value="<%= usuario.email %>">
+                </div>
+                <br>
+                <div>
+                    <label>senha</label>
+                    <input type="password" name="senha" id="senha" value="<%= usuario.senha %>">
+                </div>
+                <br>
+                <input type="submit" value="cadastrar">
+            </form>
+            <br>
+            <a href="/usuario/login">Login</a>
+</body>
+</html>

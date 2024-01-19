@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterar Senha</title>
+</head>
+<body>
+    <form action="/usuario/validar" method="post">
+        <div>
+            <label>senha</label>
+            <input type="password" name="senha" id="senha" value="<%= usuario.senha %>">
+        </div>
+        <br>
+        <div>
+            <label>alterar</label>
+            <input type="text" name="confirmacao" id="confirmacao" value="<%= usuario.email %>">
+        </div>
+        <br>
+        <input type="submit" value="entrar">
+    </form>
+</body>
+</html>

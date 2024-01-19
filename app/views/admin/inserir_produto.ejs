@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserir Produto</title>
+</head>
+<body>
+    <% include ("../../public/menu.html") %>
+    <h1>Inserir Produto</h1>
+    <% if (erros) { %>
+        <ul>
+            <% for (let i=0; i < erros.length;i++){ %>
+                <li>
+                    <%= erros[i].msg %>
+                </li>
+                <% } %>
+        </ul>
+        <% } %>
+            <form action="/produto/cadastrarProduto" method="post">
+                <div>
+                    <label>descricao</label>
+                    <input type="text" name="email" id="email" value="<%= produto.descricao %>">
+                </div>
+                <br>
+                <div>
+                    <label>preco</label>
+                    <input type="number" name="senha" id="senha" value="<%= produto.preco %>">
+                </div>
+                <br>
+                <input type="submit" value="cadastrar">
+            </form>
+            <br>
+</body>
+</html>

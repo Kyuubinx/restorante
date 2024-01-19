@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <%- include('../../public/menu.html') %>
+    <h1>Lista de produtos</h1>
+    <table>
+        <tr>
+            <th>Produtos</th>
+            <th>Preço</th>
+            <th></th>
+        </tr>
+        <% for(let i = 0; i <produtos.length; i++){%>
+        <tr>
+            <td><%= produtos[i].descricao %></td>
+            <td><%= produtos[i].preco %></td>
+            <td><form action="/produto/adicionar/<%= produtos[i].id %>" method="post">
+                <input type="hidden" value=<%=produtos[i].id_produto%> name="id_produto">
+                <input type="submit" value="Add">
+            </form></td>
+        <% 
+        }
+        %>
+            </table>
+</body>
+</html>
